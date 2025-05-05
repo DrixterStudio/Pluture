@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pluture - Download Pre-Alpha 0.1</title>
+    <title>Pluture - Download Demo</title>
     <style>
         /* Base stylenya */
         * {
@@ -421,59 +420,6 @@ li::before {
   position: relative;
   top: -2px;
 }
-.donation-section {
-    background-color: #fff;
-    border-radius: 15px;
-    padding: 2rem;
-    margin: 2rem auto;
-    max-width: 800px;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    border: 2px solid #ff4d4d;
-  }
-  
-  .donation-section h3 {
-    color: #cc0000;
-    margin-bottom: 1rem;
-    font-size: 1.8rem;
-  }
-  
-  .sociabuzz-donate-btn {
-    display: inline-flex;
-    align-items: center;
-    padding: 1rem 2rem;
-    border-radius: 50px;
-    font-weight: bold;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    color: white;
-    background: linear-gradient(135deg, #6e45e2, #88d3ce);
-    margin: 1.5rem 0;
-    font-size: 1.2rem;
-    box-shadow: 0 4px 10px rgba(110, 69, 226, 0.3);
-  }
-  
-  .sociabuzz-donate-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(110, 69, 226, 0.4);
-    background: linear-gradient(135deg, #7d55ee, #99e3de);
-  }
-  
-  .sociabuzz-donate-btn:active {
-    transform: translateY(1px);
-  }
-  
-  .sociabuzz-donate-btn i {
-    margin-right: 10px;
-    font-size: 1.3rem;
-    color: #ff9e9e;
-  }
-  
-  .donation-note {
-    font-size: 0.9rem;
-    color: #666;
-    margin-top: 1rem;
-  }
     </style>
 </head>
 <body>
@@ -490,7 +436,7 @@ li::before {
           <div class="logo">
             <img src="images/Tak berjudul29_20250503181423.png" alt="Pluture Logo">
           </div>
-          <p class="tagline">A Plungie Adventure - Pre-Alpha 0.1 Version</p>
+          <p class="tagline">A Plungie Adventure - Demo Version</p>
         </div>
       </header>
     
@@ -499,27 +445,9 @@ li::before {
     <div class="container">
         <!-- Download section -->
         <section class="download-section">
-           
-              
             <h2>Download Now!</h2>
-            <p class="version">Current Version: Pre-Alpha 0.1</p>
-           
-            <a href="pluture-0.1-pre-alpha.zip" class="download-btn" download="pluture-0.1-pre-alpha.zip">
-                Download Pre-Alpha 0.1
-              </a>
-              <div class="donation-section">
-                <h3>Support Our Game Development</h3>
-                <p>Enjoying Pluture? Help us continue development with a donation!</p>
-                
-                <a href="https://sociabuzz.com/drixterstudio/tribe" 
-                   class="sociabuzz-donate-btn" 
-                   target="_blank">
-                  <i class="fas fa-heart"></i> Support on Sociabuzz
-                </a>
-                
-                <p class="donation-note">All donations help us improve Pluture and add new features!</p>
-              </div>
-              
+            <p class="version">Current Version: Pre-Alpha-0.1</p>
+            <button class="download-btn" id="downloadBtn">Download Pre-Alpha</button>
             
             <div class="screenshots">
                 <div class="screenshot">
@@ -532,7 +460,7 @@ li::before {
                     <img src="images/Frame00000000.png" alt="Game Screenshot 3">
                 </div>
             </div>
-            <p>You can zoom out the gameplay image with click the image you wanted see!</p>
+            <p>You can zoom out the gameplay image!</p>
         </section>
         
         
@@ -556,9 +484,7 @@ li::before {
     
     <footer>
         <div class="footer-content">
-            <p class="copyright">This game made by two 15 years old boy, namely Rahagi and Choirul <br>
-                
-                © 2025 Pluture Game. All rights reserved. Pre-Alpha 0.1 Version.</p>
+            <p class="copyright">© 2025 Pluture Game. All rights reserved. Demo Version.</p>
         </div>
     </footer>
     
@@ -580,23 +506,24 @@ li::before {
             
             // Sound
             const downloadBtn = document.getElementById('downloadBtn');
-            const popSound = new Audio('data:pop-91931.mp3'); // Short pop sound
+            const popSound = new Audio('data:audio/wav;base64,UklGRl9vT19XQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YU...'); // Short pop sound
             
             downloadBtn.addEventListener('click', function() {
-                popSound.play(pop-91931);
-                // Buat naro link download 
+                popSound.play();
+                // Buat naro link download
+
                 alert('Download started! (Please wait..)');
             });
             
             // Editing
-            //const gameDescription = document.getElementById('gameDescription');
-            //gameDescription.addEventListener('click', function() {
-                const newContent = prompt('Edit the game description:', gameDescription.innerHTML);
-                if (newContent !== null) {
-                    gameDescription.innerHTML = newContent;
-                }
-            });
-        //});
+            // const gameDescription = document.getElementById('gameDescription');
+            // gameDescription.addEventListener('click', function() {
+            //     const newContent = prompt('Edit the game description:', gameDescription.innerHTML);
+            //     if (newContent !== null) {
+            //         gameDescription.innerHTML = newContent;
+            //     }
+            // });
+        });
         
         function positionSoulsRandomly(soul1, soul2) {
             // Position soul1 randomly
@@ -643,7 +570,7 @@ li::before {
     zoomOverlay.style.justifyContent = 'center';
     zoomOverlay.style.zIndex = '1000';
     zoomOverlay.style.cursor = 'zoom-out';
-    
+    // MONKEY NEGGER MONKEY NIGGGER MONKEY NEGGA
     // Zoomed image
     const zoomedImg = document.createElement('img');
     zoomedImg.src = this.querySelector('img').src;
@@ -662,21 +589,6 @@ li::before {
       document.body.removeChild(zoomOverlay);
     });
   });
-});
-document.getElementById('downloadBtn').addEventListener('click', function() {
-  // kalo punya sound effect
-  if(typeof popSound !== 'undefined') popSound.play();
-  
-  // Create temporary link
-  const link = document.createElement('a');
-  link.href = 'pluture-0.1-pre-alpha.zip';
-  link.download = 'pluture-0.1-pre-alpha.zip'; 
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-  
-  // Optional: Track downloads
-  console.log('Download started: Pluture Pre-Alpha 0.1');
 });
     </script>
 </body>
