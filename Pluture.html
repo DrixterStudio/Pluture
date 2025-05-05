@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pluture - Download Demo</title>
+    <style>
+        /* Base stylenya */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Comic Sans MS', 'Arial Rounded MT Bold', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #ffc582, #311a00);
+            
+            color: #333;
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+        }
+        .title-image {
+    margin: 0 auto 1rem;
+    text-align: center;
+}
+
+.game-title {
+    max-width: 225px;
+    height: auto;
+    margin: 0 auto;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .game-title {
+        max-width: 300px;
+    }
+}
+        
+        /* Background soul */
+        .soul {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: -1;
+            filter: blur(1px);
+            opacity: 0.8;
+            transition: transform 0.1s ease-out;
+        }
+        
+        .soul-1 {
+            background: radial-gradient(circle, #a8e6ff, #7fd4ff, #5cc1ff);
+            box-shadow: 0 0 20px #5cc1ff;
+        }
+        
+        .soul-2 {
+            background: radial-gradient(circle, #ffffff, #e6f7ff, #ccefff);
+            box-shadow: 0 0 20px #ffffff;
+        }
+        
+        /* Header style */
+header {
+  background: linear-gradient(135deg, #da5353, #410000);
+  color: white;
+  padding: 3rem 1rem;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.title-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 0;
+  
+  will-change: transform;
+  transition: transform 0.3s ease-out;
+}
+
+.background-title-image {
+  opacity: 0.30; 
+  width: 80%;
+  max-width: 550px;
+  height: auto;
+  object-fit: contain;
+  filter: brightness(1.1);
+}
+
+.header-content {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.logo {
+  width: 150px;
+  height: 150px;
+  background-color: rgb(165, 57, 57);
+  margin: 0 auto;
+  display: flex;
+  
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.753);
+  border: 5px solid #e68484;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .background-title-image {
+    width: 120%;
+    opacity: 0.1;
+  }
+  
+  header {
+    padding: 2rem 1rem;
+  }
+}
+.logo {
+    transition: all 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgb(49, 0, 0);
+    border-color: #790d0d;
+}
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+     
+        
+        /* Main content */
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        
+        .download-section {
+            background-color: rgb(238, 238, 238);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border: 3px solid #ff7474;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .download-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: linear-gradient(90deg, #ff4d4d, #ff9999, #ff4d4d);
+        }
+        
+        h2 {
+            color: #cc0000;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+        
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff4d4d, #cc0000);
+            color: white;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(204, 0, 0, 0.3);
+            margin-bottom: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(204, 0, 0, 0.4);
+        }
+        
+        .download-btn:active {
+            transform: translateY(1px);
+        }
+        
+        .download-btn::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 5px;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.637);
+            opacity: 0;
+            border-radius: 100%;
+            transform: scale(1, 1) translate(-50%);
+            transform-origin: 50% 50%;
+        }
+        
+        .download-btn:focus:not(:active)::after {
+            animation: ripple 1s ease-out;
+        }
+        
+        @keyframes ripple {
+            0% {
+                transform: scale(0, 0);
+                opacity: 0.5;
+            }
+            100% {
+                transform: scale(20, 20);
+                opacity: 0;
+            }
+        }
+        
+        .version {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        
+        /* Deskripsi */
+        .description {
+            background-color: rgb(240, 240, 240);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border: 3px solid #999;
+            margin-bottom: 2rem;
+        }
+        
+        .description h3 {
+            color: #ce0000;
+            text-align: center;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            border-bottom: 2px dashed #ff9999;
+            padding-bottom: 0.5rem;
+        }
+        
+        .description p {
+            text-align: center;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: #555;
+        }
+        
+        .description-content {
+            min-height: 150px;
+            padding: 1rem;
+            border: 1px dashed #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        .description ul {
+            
+  list-style: none;
+  padding-left: 1.5rem;
+}
+
+.description li {
+    
+  position: relative;
+  padding-left: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.description li::before {
+   
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 6px;
+  height: 6px;
+  background: #ff4d4d;
+  border-radius: 50%;
+}
+        
+        
+        .screenshots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin: 2rem auto;
+  max-width: 1000px;
+}
+
+.screenshot {
+  width: 225px; 
+  height: 135px; 
+  border-radius: 10px;
+  overflow: hidden; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: 3px solid #ff4d4d;
+  position: relative; 
+}
+
+.screenshot img {
+  position: absolute;
+  width: 120%; 
+  height: 120%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  object-fit: cover; 
+  transition: transform 0.3s ease;
+}
+
+.screenshot:hover img {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+
+        
+        footer {
+            background: linear-gradient(135deg, #ff4e4e, #310000);
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 3rem;
+        }
+        
+        .footer-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .copyright {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .logo {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .download-section, .description {
+                padding: 1.5rem;
+            }
+        }
+        ul {
+  list-style-type: none; 
+  padding-left: 1em; 
+}
+
+li {
+    align-items: center;
+  position: relative;
+  padding-left: 1.5em; 
+  margin-bottom: 0.5em;
+}
+
+li::before {
+  content: "•"; 
+  color: #ff4d4d; 
+  font-size: 1.5em; 
+  position: absolute;
+  left: 0;
+}
+ul {
+  list-style: none;
+  padding-left: 1.2rem;
+}
+
+li::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: #ff4d4d;
+  border-radius: 50%;
+  margin-right: 10px;
+  position: relative;
+  top: -2px;
+}
+.donation-section {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 800px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border: 2px solid #ff4d4d;
+  }
+  
+  .donation-section h3 {
+    color: #cc0000;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+  }
+  
+  .sociabuzz-donate-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    color: white;
+    background: linear-gradient(135deg, #6e45e2, #88d3ce);
+    margin: 1.5rem 0;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 10px rgba(110, 69, 226, 0.3);
+  }
+  
+  .sociabuzz-donate-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(110, 69, 226, 0.4);
+    background: linear-gradient(135deg, #7d55ee, #99e3de);
+  }
+  
+  .sociabuzz-donate-btn:active {
+    transform: translateY(1px);
+  }
+  
+  .sociabuzz-donate-btn i {
+    margin-right: 10px;
+    font-size: 1.3rem;
+    color: #ff9e9e;
+  }
+  
+  .donation-note {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 1rem;
+  }
+    </style>
+</head>
+<body>
+    <!-- Jiwa terbang -->
+    <div class="soul soul-1"></div>
+    <div class="soul soul-2"></div>
+    
+    <!-- Header -->
+    <header>
+        <div class="title-background">
+          <img src="images/Tak berjudul41_20250427061706.png" alt="Pluture" class="background-title-image">
+        </div>
+        <div class="header-content">
+          <div class="logo">
+            <img src="images/Tak berjudul29_20250503181423.png" alt="Pluture Logo">
+          </div>
+          <p class="tagline">A Plungie Adventure - Pre-Alpha 0.1 Version</p>
+        </div>
+      </header>
+    
+    
+    <!-- Main content -->
+    <div class="container">
+        <!-- Download section -->
+        <section class="download-section">
+           
+              
+            <h2>Download Now!</h2>
+            <p class="version">Current Version: Pre-Alpha 0.1</p>
+           
+            <a href="pluture-0.1-pre-alpha.zip" class="download-btn" download="pluture-0.1-pre-alpha.zip">
+                Download Pre-Alpha 0.1
+              </a>
+              <div class="donation-section">
+                <h3>Support Our Game Development</h3>
+                <p>Enjoying Pluture? Help us continue development with a donation!</p>
+                
+                <a href="https://sociabuzz.com/drixterstudio/tribe" 
+                   class="sociabuzz-donate-btn" 
+                   target="_blank">
+                  <i class="fas fa-heart"></i> Support on Sociabuzz
+                </a>
+                
+                <p class="donation-note">All donations help us improve Pluture and add new features!</p>
+              </div>
+              
+            
+            <div class="screenshots">
+                <div class="screenshot">
+                    <img src="images/Frame00000058.png" alt="Game Screenshot 1">
+                </div>
+                <div class="screenshot">
+                    <img src="images/Frame00000001.png" alt="Game Screenshot 2">
+                </div>
+                <div class="screenshot">
+                    <img src="images/Frame00000000.png" alt="Game Screenshot 3">
+                </div>
+            </div>
+            <p>You can zoom out the gameplay image with click the image you wanted see!</p>
+        </section>
+        
+        
+        <!-- Game deskripsi -->
+        <section class="description">
+            <h3>About Pluture</h3>
+            <div class="description-content" id="gameDescription">
+                <p>A game about plungie adventure, exploring world to figure out who is plungie true identity is..</p>
+                <p>In this demo version, you can experience the first level of the game, featuring:</p>
+                <ul>
+                    <li >Exploring world!</li>
+                    <li >Interesting and unique battles mechanic!</li>
+                    <li >Solve some puzzle!</li>
+                    <li >A interesting and mysterious story!</li>
+                </ul>
+                <br><p>The full version will include more characters, and an expanded story!</p>
+            </div>
+        </section>
+    </div>
+    
+    
+    <footer>
+        <div class="footer-content">
+            <p class="copyright">This game made by two 15 years old boy, namely Rahagi and Choirul <br>
+                
+                © 2025 Pluture Game. All rights reserved. Pre-Alpha 0.1 Version.</p>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script>
+        // Jiwa terbang ngikutin mouse
+        document.addEventListener('DOMContentLoaded', function() {
+            const soul1 = document.querySelector('.soul-1');
+            const soul2 = document.querySelector('.soul-2');
+            
+            // Random position
+            positionSoulsRandomly(soul1, soul2);
+            
+            // Delay jiwa nya
+            document.addEventListener('mousemove', function(e) {
+                moveSoulWithDelay(soul1, e.clientX, e.clientY, 100);
+                moveSoulWithDelay(soul2, e.clientX, e.clientY, 150);
+            });
+            
+            // Sound
+            const downloadBtn = document.getElementById('downloadBtn');
+            const popSound = new Audio('data:pop-91931.mp3'); // Short pop sound
+            
+            downloadBtn.addEventListener('click', function() {
+                popSound.play(pop-91931);
+                // Buat naro link download 
+                alert('Download started! (Please wait..)');
+            });
+            
+            // Editing
+            //const gameDescription = document.getElementById('gameDescription');
+            //gameDescription.addEventListener('click', function() {
+                const newContent = prompt('Edit the game description:', gameDescription.innerHTML);
+                if (newContent !== null) {
+                    gameDescription.innerHTML = newContent;
+                }
+            });
+        //});
+        
+        function positionSoulsRandomly(soul1, soul2) {
+            // Position soul1 randomly
+            const x1 = Math.random() * window.innerWidth;
+            const y1 = Math.random() * window.innerHeight;
+            soul1.style.left = `${x1}px`;
+            soul1.style.top = `${y1}px`;
+            
+            // Position soul2 randomly tapi ga terlalu deket sm soul1
+            const x2 = (x1 + 200 + Math.random() * (window.innerWidth - 400)) % window.innerWidth;
+            const y2 = (y1 + 200 + Math.random() * (window.innerHeight - 400)) % window.innerHeight;
+            soul2.style.left = `${x2}px`;
+            soul2.style.top = `${y2}px`;
+        }
+        
+        function moveSoulWithDelay(soul, targetX, targetY, delay) {
+            setTimeout(() => {
+                const currentX = parseFloat(soul.style.left) || window.innerWidth / 2;
+                const currentY = parseFloat(soul.style.top) || window.innerHeight / 2;
+                
+                const newX = currentX + (targetX - currentX) * 0.05;
+                const newY = currentY + (targetY - currentY) * 0.05;
+                
+                soul.style.left = `${newX}px`;
+                soul.style.top = `${newY}px`;
+                
+                // Melayang efek
+                const floatOffset = Math.sin(Date.now() / 1000) * 10;
+                soul.style.transform = `translateY(${floatOffset}px)`;
+            }, delay);
+        }
+        document.querySelectorAll('.screenshot').forEach(screenshot => {
+  screenshot.addEventListener('click', function() {
+    // Zoom overlay
+    const zoomOverlay = document.createElement('div');
+    zoomOverlay.style.position = 'fixed';
+    zoomOverlay.style.top = '0';
+    zoomOverlay.style.left = '0';
+    zoomOverlay.style.width = '100%';
+    zoomOverlay.style.height = '100%';
+    zoomOverlay.style.backgroundColor = 'rgba(0,0,0,0.9)';
+    zoomOverlay.style.display = 'flex';
+    zoomOverlay.style.alignItems = 'center';
+    zoomOverlay.style.justifyContent = 'center';
+    zoomOverlay.style.zIndex = '1000';
+    zoomOverlay.style.cursor = 'zoom-out';
+    
+    // Zoomed image
+    const zoomedImg = document.createElement('img');
+    zoomedImg.src = this.querySelector('img').src;
+    zoomedImg.style.maxWidth = '90%';
+    zoomedImg.style.maxHeight = '90%';
+    zoomedImg.style.objectFit = 'contain';
+    zoomedImg.style.borderRadius = '10px';
+    zoomedImg.style.boxShadow = '0 0 30px rgba(255,77,77,0.5)';
+    
+    
+    zoomOverlay.appendChild(zoomedImg);
+    document.body.appendChild(zoomOverlay);
+    
+    
+    zoomOverlay.addEventListener('click', function() {
+      document.body.removeChild(zoomOverlay);
+    });
+  });
+});
+document.getElementById('downloadBtn').addEventListener('click', function() {
+  // kalo punya sound effect
+  if(typeof popSound !== 'undefined') popSound.play();
+  
+  // Create temporary link
+  const link = document.createElement('a');
+  link.href = 'pluture-0.1-pre-alpha.zip';
+  link.download = 'pluture-0.1-pre-alpha.zip'; 
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  
+  // Optional: Track downloads
+  console.log('Download started: Pluture Pre-Alpha 0.1');
+});
+    </script>
+</body>
+</html>
