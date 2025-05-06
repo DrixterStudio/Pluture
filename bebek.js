@@ -1,26 +1,127 @@
 // Jiwa terbang ngikutin mouse
-        document.addEventListener('DOMContentLoaded', function() {
-            const soul1 = document.querySelector('.soul-1');
-            const soul2 = document.querySelector('.soul-2');
+       document.addEventListener('DOMContentLoaded', function() {
+    const soul1 = document.querySelector('.soul-1');
+    const soul2 = document.querySelector('.soul-2');
+    
+    
+    function playIntroAnimation() {
+        
+        soul1.style.left = '-100px';
+        soul1.style.top = '50%';
+        soul2.style.right = '-100px';
+        soul2.style.top = '50%';
+        
+        
+        const introDuration = 1500; // 1.5 seconds
+        const startTime = Date.now();
+        
+        function animateIntro() {
+            const elapsed = Date.now() - startTime;
+            const progress = Math.min(elapsed / introDuration, 1);
             
             
-            // Random position
-            positionSoulsRandomly(soul1, soul2);
+            const easedProgress = 1 - Math.pow(1 - progress, 3);
             
-            // Delay jiwa nya
-            var x = 0.0
-            var y = 0.0
-            document.addEventListener('mousemove', function(b) {
-                x = b.clientX
-                y = b.clientY
-            });
            
-            function e() {
-                moveSoulWithDelay(soul1, x, y, 100);
-                moveSoulWithDelay(soul2, x, y, 150);
+            soul1.style.left = `${-100 + (window.innerWidth/2 - 100) * easedProgress}px`;
+            soul2.style.right = `${-100 + (window.innerWidth/2 - 100) * easedProgress}px`;
+            
+            
+            const floatOffset = Math.sin(elapsed/300) * 20;
+            soul1.style.transform = `translateY(${floatOffset}px)`;
+            soul2.style.transform = `translateY(${-floatOffset}px)`;
+            
+            if (progress < 1) {
+                requestAnimationFrame(animateIntro);
+            } else {
+                
+                soul1.style.transition = 'transform 0.3s ease-out';
+                soul2.style.transition = 'transform 0.3s ease-out';
             }
-
-            setInterval(e, 10)
+        }
+        
+        requestAnimationFrame(animateIntro);
+    }
+    
+    
+    let mouseX = window.innerWidth/2;
+    let mouseY = window.innerHeight/2;
+    let soul1X = mouseX;
+    let soul1Y = mouseY;
+    let soul2X = mouseX;
+    let soul2Y = mouseY;
+    
+    
+    let lastMouseX = mouseX;
+    let lastMouseY = mouseY;
+    let mouseVelX = 0;
+    let mouseVelY = 0;
+    
+   
+    const soul1Speed = 0.1;
+    const soul2Speed = 0.07;
+    const maxSpeed = 30;
+    const floatAmplitude = 15;
+    const floatSpeed = 0.003;
+    
+    function updateSoulPositions() {
+        
+        mouseVelX = mouseX - lastMouseX;
+        mouseVelY = mouseY - lastMouseY;
+        lastMouseX = mouseX;
+        lastMouseY = mouseY;
+        
+       
+        const target1X = mouseX + mouseVelX * 2;
+        const target1Y = mouseY + mouseVelY * 2;
+        const target2X = mouseX + mouseVelX * 3;
+        const target2Y = mouseY + mouseVelY * 3;
+        
+        
+        soul1X += (target1X - soul1X) * soul1Speed;
+        soul1Y += (target1Y - soul1Y) * soul1Speed;
+        soul2X += (target2X - soul2X) * soul2Speed;
+        soul2Y += (target2Y - soul2Y) * soul2Speed;
+        
+       
+        const time = Date.now();
+        const float1 = Math.sin(time * floatSpeed) * floatAmplitude;
+        const float2 = Math.cos(time * floatSpeed * 1.3) * floatAmplitude;
+        
+       
+        soul1.style.left = `${soul1X}px`;
+        soul1.style.top = `${soul1Y + float1}px`;
+        soul2.style.left = `${soul2X}px`;
+        soul2.style.top = `${soul2Y + float2}px`;
+        
+        requestAnimationFrame(updateSoulPositions);
+    }
+    
+    
+    document.addEventListener('mousemove', function(e) {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    });
+    
+    
+    document.addEventListener('touchmove', function(e) {
+        mouseX = e.touches[0].clientX;
+        mouseY = e.touches[0].clientY;
+        e.preventDefault();
+    }, { passive: false });
+    
+    
+    playIntroAnimation();
+    updateSoulPositions();
+    
+    
+    window.addEventListener('resize', function() {
+        soul1X = mouseX;
+        soul1Y = mouseY;
+        soul2X = mouseX;
+        soul2Y = mouseY;
+    });
+});
             
             // Sound
             const downloadBtn = document.getElementById('downloadBtn');
