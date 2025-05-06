@@ -141,8 +141,8 @@
                 if (newContent !== null) {
                      gameDescription.innerHTML = newContent;
                 }
-             });
-        });
+            //  });
+        // });
         
         function positionSoulsRandomly(soul1, soul2) {
             // Position soul1 randomly
