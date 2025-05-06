@@ -137,10 +137,10 @@
             // Editing
             // const gameDescription = document.getElementById('gameDescription');
             // gameDescription.addEventListener('click', function() {
-                 const newContent = prompt('Edit the game description:', gameDescription.innerHTML);
-                if (newContent !== null) {
-                     gameDescription.innerHTML = newContent;
-                }
+                //  const newContent = prompt('Edit the game description:', gameDescription.innerHTML);
+                // if (newContent !== null) {
+                //      gameDescription.innerHTML = newContent;
+                // }
             //  });
         // });
         
