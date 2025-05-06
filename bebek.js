@@ -125,7 +125,7 @@
             
             // Sound
             const downloadBtn = document.getElementById('downloadBtn');
-            const popSound = new Audio('data:audio/wav;base64,UklGRl9vT19XQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YU...'); // Short pop sound
+            const popSound = new Audio('data:audio/pop'); // Short pop sound
             
             downloadBtn.addEventListener('click', function() {
                 popSound.play();
@@ -137,11 +137,11 @@
             // Editing
             // const gameDescription = document.getElementById('gameDescription');
             // gameDescription.addEventListener('click', function() {
-            //     const newContent = prompt('Edit the game description:', gameDescription.innerHTML);
-            //     if (newContent !== null) {
-            //         gameDescription.innerHTML = newContent;
-            //     }
-            // });
+                 const newContent = prompt('Edit the game description:', gameDescription.innerHTML);
+                if (newContent !== null) {
+                     gameDescription.innerHTML = newContent;
+                }
+             });
         });
         
         function positionSoulsRandomly(soul1, soul2) {
