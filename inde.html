@@ -495,14 +495,25 @@ li::before {
             const soul1 = document.querySelector('.soul-1');
             const soul2 = document.querySelector('.soul-2');
             
+            
             // Random position
             positionSoulsRandomly(soul1, soul2);
             
             // Delay jiwa nya
-            document.addEventListener('mousemove', function(e) {
-                moveSoulWithDelay(soul1, e.clientX, e.clientY, 100);
-                moveSoulWithDelay(soul2, e.clientX, e.clientY, 150);
+            var x = 0.0
+            var y = 0.0
+            document.addEventListener('mousemove', function(b) {
+                x = b.clientX
+                y = b.clientY
             });
+           
+           
+            function e() {
+                moveSoulWithDelay(soul1, x, y, 100);
+                moveSoulWithDelay(soul2, x, y, 150);
+            }
+
+            setInterval(e, 10)
             
             // Sound
             const downloadBtn = document.getElementById('downloadBtn');
