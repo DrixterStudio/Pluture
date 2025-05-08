@@ -107,8 +107,10 @@
     document.addEventListener('touchmove', function(e) {
         mouseX = e.touches[0].clientX;
         mouseY = e.touches[0].clientY;
-        e.preventDefault();
-    }, { passive: false });
+        // e.preventDefault();
+    }
+    // , { passive: false }
+);
     
     
     playIntroAnimation();
