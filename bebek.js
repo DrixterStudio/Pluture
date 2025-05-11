@@ -3,7 +3,7 @@
     const soul1 = document.querySelector('.soul-1');
     const soul2 = document.querySelector('.soul-2');
     
-    
+
     function playIntroAnimation() {
         
         soul1.style.left = '-100px';
@@ -177,6 +177,12 @@
             }, delay);
         }
         document.querySelectorAll('.screenshot').forEach(screenshot => {
+            // screenshot.addEventListener('mouseover', function(e) {
+            //     e.
+            // })
+            // screenshot.addEventListener('mouseout', function(e) {
+            //     prompt("bebek")
+            // })
   screenshot.addEventListener('click', function() {
     // Zoom overlay
     const zoomOverlay = document.createElement('div');

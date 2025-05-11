@@ -49,6 +49,7 @@
   z-index: -10;
   right: 0px;
   bottom: 0px;
+  cursor: pointer;
 }
         
         /* Background soul */
@@ -350,6 +351,7 @@ header {
   transform: translate(-50%, -50%);
   object-fit: cover; 
   transition: transform 0.3s ease;
+  cursor: pointer;
 }
 
 .screenshot:hover img {
@@ -364,17 +366,20 @@ header {
             text-align: center;
             padding: 1.5rem 0;
             margin-top: 3rem;
-        }
-        
-        .footer-content {
+            pointer-events: none;
+          }
+          
+          .footer-content {
             max-width: 900px;
             margin: 0 auto;
             padding: 0 2rem;
+            pointer-events: none;
         }
         
         .copyright {
             font-size: 0.9rem;
             opacity: 0.8;
+            pointer-events: none;
         }
         
         /* Responsive */
@@ -487,7 +492,7 @@ li::before {
     </style>
 </head>
 <body>
-    <img src="images/kee.png" alt="bebek" class="kee">
+    <img src="images/kee.png" alt="bebek" class="kee" id="kee">
     <!-- Jiwa terbang -->
     <div class="soul soul-1"></div>
     <div class="soul soul-2"></div>
