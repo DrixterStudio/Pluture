@@ -131,9 +131,7 @@
             
             downloadBtn.addEventListener('click', function() {
                 popSound.play();
-                // Buat naro link download
-
-                alert('Download started! (Please wait..)');
+                // Buat naro suara ketika klik tombol download
             });
             
             // Editing
