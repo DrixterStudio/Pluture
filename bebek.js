@@ -174,6 +174,40 @@
                 soul.style.transform = `translateY(${floatOffset}px)`;
             }, delay);
         }
+        const poster = document.querySelector('.poster-image');
+
+        poster.addEventListener('click', function() {
+            // Zoom overlay
+            const zoomOverlay = document.createElement('div');
+            zoomOverlay.style.position = 'fixed';
+            zoomOverlay.style.top = '0';
+            zoomOverlay.style.left = '0';
+            zoomOverlay.style.width = '100%';
+            zoomOverlay.style.height = '100%';
+            zoomOverlay.style.backgroundColor = 'rgba(0,0,0,0.9)';
+            zoomOverlay.style.display = 'flex';
+            zoomOverlay.style.alignItems = 'center';
+            zoomOverlay.style.justifyContent = 'center';
+            zoomOverlay.style.zIndex = '1000';
+            zoomOverlay.style.cursor = 'zoom-out';
+
+            // Zoomed image
+            const zoomedImg = document.createElement('img');
+            zoomedImg.src = this.src;
+            zoomedImg.style.maxWidth = '90%';
+            zoomedImg.style.maxHeight = '90%';
+            zoomedImg.style.objectFit = 'contain';
+            zoomedImg.style.borderRadius = '10px';
+            zoomedImg.style.boxShadow = '0 0 30px rgba(255,77,77,0.5)';
+
+            zoomOverlay.appendChild(zoomedImg);
+            document.body.appendChild(zoomOverlay);
+
+            zoomOverlay.addEventListener('click', function() {
+                document.body.removeChild(zoomOverlay);
+            });
+        });
+
         document.querySelectorAll('.screenshot').forEach(screenshot => {
             // screenshot.addEventListener('mouseover', function(e) {
             //     e.
