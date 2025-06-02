@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pluture - Download Pre-Alpha 0.1.2</title>
+    <title>Pluture - Download Pre-Alpha 0.1.3</title>
     <link rel="icon" type="images/png" href="images/Tak berjudul29_20250503181423.png">
     <style>
         /* Base stylenya */
@@ -489,6 +489,240 @@ li::before {
     color: #666;
     margin-top: 1rem;
   }
+        .about-poster-section {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  align-items: flex-start;
+}
+
+.about-content {
+  flex: 1;
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.game-poster {
+  width: 300px; 
+  position: sticky;
+  top: 20px;
+}
+
+.game-poster img {
+  width: 100%;
+  height: auto;
+  /* border-radius: 10px; */
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  /* border: 3px solid #ff4d4d; */
+}
+
+.gameplay-section {
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+
+@media (max-width: 1024px) {
+  .about-poster-section {
+    flex-direction: column;
+  }
+  
+  .game-poster {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .game-poster {
+    max-width: 768px;
+  }
+  
+  .game-poster img {
+   
+    max-height: 80vh;
+    object-fit: contain;
+  }
+  
+  .screenshots {
+    grid-template-columns: 1fr; 
+  }
+}
+
+.about-section {
+  background-color: white;
+  border-radius: 15px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  border: 3px solid #ff4d4d;
+  
+}
+
+.about-content {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.description-content {
+  flex: 1;
+}
+
+.game-poster {
+  width: 300px;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border: 2px solid #ddd;
+  align-self: center; 
+}
+
+
+.poster-image {
+  cursor: pointer;
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.game-poster:hover .poster-image {
+  transform: scale(1.03);
+  filter: brightness(1.05);
+}
+
+.poster-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.game-poster:hover .poster-overlay {
+  opacity: 1;
+}
+
+.screenshot {
+  position: relative;
+  overflow: hidden;
+}
+
+.screenshot-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(204,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.screenshot:hover .screenshot-overlay {
+  opacity: 1;
+}
+
+
+@media (max-width: 1024px) {
+  .about-content {
+    flex-direction: column;
+  }
+  
+  .game-poster {
+    width: 100%;
+    max-width: 400px;
+    margin: 1rem auto 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .game-poster {
+    max-width: 100%;
+  }
+}
+.poster-container {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.game-poster {
+  width: 300px; 
+  max-width: 100%;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  border: 3px solid #ff4d4d;
+}
+
+
+.game-poster:hover .poster-image {
+  transform: scale(1.03);
+  filter: brightness(1.05);
+}
+
+.poster-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.game-poster:hover .poster-overlay {
+  opacity: 1;
+}
+
+
+@media (max-width: 768px) {
+  .game-poster {
+    width: 100%;
+    max-width: 768px;
+  }
+}
+        .email-link {
+  color: #ff4d4d;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.email-link:hover {
+  color: #cc0000;
+  text-decoration: underline;
+}
+
+.email-link i {
+  font-size: 1.1em;
+}
     </style>
 </head>
 <body>
@@ -506,7 +740,7 @@ li::before {
           <div class="logo">
             <img src="images/Tak berjudul29_20250503181423.png" alt="Pluture Logo">
           </div>
-          <p class="tagline">A Plungie Adventure - Pre-Alpha 0.1.2 Version</p>
+          <p class="tagline">A Plungie Adventure - Pre-Alpha 0.1.3 Version</p>
         </div>
       </header>
     
@@ -518,10 +752,10 @@ li::before {
            
               
             <h2>Download Now!</h2>
-            <p class="version">Current Version: Pre-Alpha 0.1.2</p>
+            <p class="version">Current Version: Pre-Alpha 0.1.3</p>
            
-            <a href="pluture-0.1.2-pre-alpha.zip" class="download-btn" id="downloadBtn" download="pluture-0.1.2-pre-alpha.zip">
-                Download Pre-Alpha 0.1.2
+            <a href="pluture-0.1.3-pre-alpha.zip" class="download-btn" id="downloadBtn" download="pluture-0.1.3-pre-alpha.zip">
+                Download Pre-Alpha 0.1.3
               </a>
               <div class="donation-section">
                 <h3>Support Our Game Development</h3>
@@ -535,8 +769,16 @@ li::before {
                 
                 <p class="donation-note">All donations help us improve Pluture and add new features!</p>
               </div>
-              
-            
+              <section class="about-section">
+                <h3><u>This is the poster of Pluture</u></h3>
+                <div class="poster-container">
+                  <div class="game-poster">
+                    <img src="images/poster pluture.png" alt="Pluture Game Poster" class="poster-image">
+                    <div class="poster-overlay">
+                      <span>Official Game Poster</span>
+                      <i class="fas fa-star"></i>
+                    </div>
+                </section>
             <div class="screenshots">
                 <div class="screenshot">
                     <img src="images/Frame00000058.png" alt="Game Screenshot 1">
@@ -548,7 +790,7 @@ li::before {
                     <img src="images/Frame00000000.png" alt="Game Screenshot 3">
                 </div>
             </div>
-            <p>You can zoom out the gameplay image with click the image you wanted see!</p>
+            <p>You can zoom in the gameplay image by clicking the image you wanted to see!</p>
         </section>
         
         
@@ -556,8 +798,8 @@ li::before {
         <section class="description">
             <h3>About Pluture</h3>
             <div class="description-content" id="gameDescription">
-                <p>A game about plungie adventure, exploring world to figure out who is plungie true identity is..</p>
-                <p>In this Pre-Alpha 0.1.2 version, you can experience the first level of the game, featuring:</p>
+                <p>A game about plungie adventure, exploring world to figure out who plungie's true identity is..</p>
+                <p>In this Pre-Alpha 0.1.3 version, you can experience the first level of the game, featuring:</p>
                 <ul>
                     <li >Exploring world!</li>
                     <li >Interesting and unique battles mechanic!</li>
@@ -574,7 +816,11 @@ li::before {
         <div class="footer-content">
             <p class="copyright">This game made by two 15 years old boy, namely Rahagi and Choirul <br>
                 
-                © 2025 Pluture Game. All rights reserved. Pre-Alpha 0.1.2 Version.</p>
+                © 2025 Pluture Game. All rights reserved. Pre-Alpha 0.1.3 Version.</p>
+            <br>
+<a href="mailto:drixterstudio@gmail.com?subject=Pluture Support Request&body=Hello Drixter Studio,%0D%0A%0D%0AI need help with..." class="email-link">
+  <i class="fas fa-envelope"></i> drixterstudio@gmail.com
+</a>
         </div>
     </footer>
     
