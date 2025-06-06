@@ -1,2 +1,15 @@
 User-agent: *
+User-agent:Googlebot
+User-agent:Googlebot-Mobile
 Disallow: /images/kee.png
+Disallow: /images/Frame00000000.png 
+Disallow: /images/Frame00000001.png 
+Disallow: /images/Frame00000058.png
+Disallow: /images/LogoPluTure.png
+Disallow: /images/Tak berjudul29_20250503181423.png 
+Disallow: /images/Tak berjudul39_20250429184634.png 
+Disallow: /images/Tak berjudul39_20250429184639.png 
+Disallow: /images/Tak berjudul41_20250426194129.png 
+Disallow: /images/Tak berjudul41_20250427061706.png
+
+Sitemap: https://drixterstudio.github.io/Pluture/sitemap.xml
